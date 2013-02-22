@@ -10,7 +10,7 @@ Steps to create Pretty URLs:
 
 Include gem in your Gem file:
 
-<i>gem 'friendly_id'</i>
+    gem 'friendly_id'
 
 Then run bundle install.
 
@@ -18,18 +18,17 @@ Then run bundle install.
 
 Modify your model on which you want the pretty URL:
 
-<i>extend FriendlyId</i>
- 
-<i>friendly_id :title, use: :slugged</i>
+    extend FriendlyId 
+    friendly_id :title, use: :slugged
 
 <h6>Step#3</h6>
 
 Add the slug column in your migration file to add it on the table
 
-<i>add_column :articles, :slug, :string</i>
+    add_column :articles, :slug, :string
 
 Then run
 
-<i>rake db:migrate</i>
+    rake db:migrate
 
 Now if you create an article with Title like “This is a demo title for testing”, it will create a SEO friendly URL like “this-is-a-demo-title-for-testing” and will save into the articles table under slug column.
